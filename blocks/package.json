@@ -1,0 +1,26 @@
+{
+	"name": "blocks",
+	"version": "0.1.0",
+	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"author": "The WordPress Contributors",
+	"license": "GPL-2.0-or-later",
+	"main": "index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start",
+		"start:section": "wp-scripts start section/src/index.js --output-path=section/build/",
+		"build:section": "wp-scripts build section/src/index.js --output-path=section/build/",
+		"start:slider": "wp-scripts start slider/src/index.js --output-path=slider/build/",
+		"build:slider": "wp-scripts build slider/src/index.js --output-path=slider/build/",
+		"start:slider-item": "wp-scripts start slider-item/src/index.js --output-path=slider-item/build/",
+		"build:slider-item": "wp-scripts build slider-item/src/index.js --output-path=slider-item/build/"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^21.0.2"
+	}
+}

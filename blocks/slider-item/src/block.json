@@ -1,0 +1,18 @@
+{
+	"$schema": "http://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "dealersair-blocks/slider-item",
+	"version": "0.1.0",
+	"title": "Slider Item",
+	"category": "dealersair-blocks",
+	"parent": [ "dealersair-blocks/slider" ],
+	"icon": "smiley",
+	"description": "Slider dd Item Example block written with ESNext standard and JSX support – build step required.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "wp-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css" 
+}
