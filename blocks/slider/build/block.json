@@ -7,6 +7,14 @@
 	"category": "dealersair-blocks",
 	"icon": "smiley",
 	"description": "Slider rrr block written with ESNext standard and JSX support – build step required.",
+	"attributes": {
+		"slidesToShow": {
+			"type": "number"
+		},
+		"slidesToScroll": {
+			"type": "number"
+		}
+	},
 	"supports": {
 		"html": false
 	},

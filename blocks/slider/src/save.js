@@ -22,8 +22,14 @@ import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
-	const blockProps = useBlockProps.save(/*  { className }  */);
+export default function save({ attributes }) {
+	const {} = attributes;
+
+	const blockProps = useBlockProps.save({
+		"data-slides-to-show": attributes.slidesToShow,
+		"data-slides-to-scroll": attributes.slidesToScroll
+	});
+
 	const innerBlocksProps = useInnerBlocksProps.save(blockProps);
 
 	return <div {...innerBlocksProps} />;

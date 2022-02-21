@@ -11,7 +11,14 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, InnerBlocks, useInnerBlocksProps } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	InnerBlocks,
+	useInnerBlocksProps,
+	InspectorControls
+} from '@wordpress/block-editor';
+
+import { PanelBody, RangeControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,7 +36,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps({
 		// className: classes,
 	});
@@ -39,7 +46,39 @@ export default function Edit() {
 		renderAppender: InnerBlocks.ButtonBlockAppender,
 	});
 
+	const slidesToShow = function (val) {
+		setAttributes({
+			slidesToShow: val
+		});
+	}
+
+	const slidesToScroll = function (val) {
+		setAttributes({
+			slidesToScroll: val
+		});
+	}
+
 	return (
-		<div {...innerBlocksProps} />
+		<>
+			<InspectorControls>
+				<PanelBody>
+					<RangeControl
+						label={__('Slides to show')}
+						value={attributes.slidesToShow || 1}
+						onChange={slidesToShow}
+						min={1}
+						max={21}
+					/>
+					<RangeControl
+						label={__('Slides to scroll')}
+						value={attributes.slidesToScroll || 1}
+						onChange={slidesToScroll}
+						min={1}
+						max={21}
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<div {...innerBlocksProps} />
+		</>
 	);
 }
