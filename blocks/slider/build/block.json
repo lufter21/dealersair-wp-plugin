@@ -1,10 +1,10 @@
 {
 	"$schema": "http://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "dealersair-blocks/slider",
+	"name": "nxt-blocks/slider",
 	"version": "0.1.0",
 	"title": "Slider",
-	"category": "dealersair-blocks",
+	"category": "nxt-blocks",
 	"icon": "smiley",
 	"description": "Slider rrr block written with ESNext standard and JSX support – build step required.",
 	"attributes": {
@@ -18,7 +18,7 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "dealersair",
+	"textdomain": "nxt-toolkit",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

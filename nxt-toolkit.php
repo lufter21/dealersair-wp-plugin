@@ -1,16 +1,16 @@
 <?php
 /**
- * @package DealersAir
+ * @package nxt-toolkit
  */
 /*
-Plugin Name: DealersAir
-Plugin URI: https://dealersair.com/
-Description: Modern solutions for WordPress themes.
+Plugin Name: Nxt Theme Toolkit
+Plugin URI: https://dealersair.com/nxt-business-wordpress-theme
+Description: Nxt Theme Toolkit
 Version: 0.1.0
 Author: Vitalii Bokhin
 Author URI: https://vitaliibokhin.com/
 License: GNU General Public License v2 or later
-Text Domain: dealersair
+Text Domain: nxt-toolkit
 */
 
 // /*
@@ -65,7 +65,7 @@ Text Domain: dealersair
 // 	require_once( AKISMET__PLUGIN_DIR . 'class.akismet-cli.php' );
 // }
 
-define( 'DEALERSAIR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'NXT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
  * Add Blocks Category
@@ -74,8 +74,8 @@ function filter_block_categories_when_post_provided( $block_categories, $editor_
     array_push(
         $block_categories,
         array(
-            'slug'  => 'dealersair-blocks',
-            'title' => __( 'DealersAir', 'dealersair' ),
+            'slug'  => 'nxt-blocks',
+            'title' => __( 'NXT Blocks', 'nxt-toolkit' ),
             'icon'  => null,
         )
     );
@@ -87,4 +87,9 @@ add_filter( 'block_categories_all', 'filter_block_categories_when_post_provided'
 /**
  * Include blocks
  */
-require_once( DEALERSAIR_PLUGIN_DIR . 'blocks/blocks.php' );
+require_once NXT_PLUGIN_DIR . 'blocks/blocks.php';
+
+/**
+ * Include block patterns
+ */
+require_once NXT_PLUGIN_DIR . 'block-patterns/block-patterns.php';
