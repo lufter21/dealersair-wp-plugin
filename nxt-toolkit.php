@@ -68,6 +68,27 @@ Text Domain: nxt-toolkit
 define( 'NXT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
+ * Add blocks button to admin menu
+ */
+add_action( 'admin_menu', function () {
+	add_menu_page( esc_html__('Blocks', 'nxt'), esc_html__('Blocks', 'nxt'), 'manage_options', 'edit.php?post_type=wp_block', '', 'dashicons-block-default', 4 );
+});
+
+/**
+ * Dequeue blocks styles.
+ */
+add_action( 'wp_enqueue_scripts', function () {
+	wp_dequeue_style( 'wp-block-library' );
+});
+
+/**
+ * Enqueue blocks styles in footer.
+ */
+add_action( 'get_footer', function () {
+    wp_enqueue_style( 'wp-block-library' );
+});
+
+/**
  * Add Blocks Category
  */
 function filter_block_categories_when_post_provided( $block_categories, $editor_context ) {

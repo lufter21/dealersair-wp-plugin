@@ -15,10 +15,11 @@
 function nxt_toolkit_register_block_patterns() {
 	$block_pattern_categories = array(
 		'featured' => array( 'label' => __( 'Featured', 'nxt-toolkit' ) ),
-		'footer'   => array( 'label' => __( 'Footers', 'nxt-toolkit' ) ),
-		'header'   => array( 'label' => __( 'Headers', 'nxt-toolkit' ) ),
-		'query'    => array( 'label' => __( 'Query', 'nxt-toolkit' ) ),
-		'pages'    => array( 'label' => __( 'Pages', 'nxt-toolkit' ) ),
+		'footer' => array( 'label' => __( 'Footers', 'nxt-toolkit' ) ),
+		'header' => array( 'label' => __( 'Headers', 'nxt-toolkit' ) ),
+		'query' => array( 'label' => __( 'Query', 'nxt-toolkit' ) ),
+		'pages' => array( 'label' => __( 'Pages', 'nxt-toolkit' ) ),
+		'general' => array( 'label' => __( 'General', 'nxt-toolkit' ) ),
 	);
 
 	/**
@@ -45,7 +46,8 @@ function nxt_toolkit_register_block_patterns() {
 	}
 
 	$block_patterns = array(
-		'general-section-content',
+		'general-wrapper',
+		'pages-heading-text-block',
 	);
 
 	/**
