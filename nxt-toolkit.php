@@ -8,10 +8,15 @@ Plugin URI: https://dealersair.com/nxt-business-wordpress-theme
 Description: Nxt Theme Toolkit
 Version: 0.1.0
 Author: Vitalii Bokhin
-Author URI: https://vitaliibokhin.com/
+Author URI: https://bokhin.com
 License: GNU General Public License v2 or later
 Text Domain: nxt-toolkit
 */
+
+if ( ! defined( '_NXT_TK_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_NXT_TK_VERSION', '0.1.0' );
+}
 
 // /*
 // This program is free software; you can redistribute it and/or
@@ -66,6 +71,31 @@ Text Domain: nxt-toolkit
 // }
 
 define( 'NXT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'NXT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+
+/**
+ * Enqueue scripts and styles.
+ */
+function nxt_toolkit_scripts() {
+	wp_enqueue_style( 'nxt-toolkit-head-style', NXT_PLUGIN_URL . 'css/style.head.css', array(), _NXT_TK_VERSION );
+	
+	wp_enqueue_script( 'nxt-toolkit-script', NXT_PLUGIN_URL . 'js/script.js', array(), _NXT_TK_VERSION, true );
+
+	wp_add_inline_script(
+		'nxt-toolkit-script', 
+		'var sJS = { assetsDirPath: "'. NXT_PLUGIN_URL .'", deferScriptsStartLoading: function () {}, deferScriptsBefore: [], deferScriptsAfter: [] };',
+		'before'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'nxt_toolkit_scripts' );
+
+/**
+ * Enqueue scripts and styles in footer.
+ */
+function nxt_toolkit_footer_styles() {
+    wp_enqueue_style( 'nxt-foot-style', NXT_PLUGIN_URL . 'css/style.foot.css', array(), _NXT_TK_VERSION );
+}
+add_action( 'get_footer', 'nxt_toolkit_footer_styles' );
 
 /**
  * Add blocks button to admin menu
