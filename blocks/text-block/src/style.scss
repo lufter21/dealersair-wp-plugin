@@ -1,0 +1,26 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@import '../../../src/sass/functions';
+
+.nxt-text-block {
+	font-family: var(--nxt-txt-font-family);
+    color: var(--nxt-txt-color);
+	&__title{
+		font-size: rem(36);
+        font-weight: 700;
+        line-height: calc(43/36);
+        font-family: var(--nxt-title-font-family);
+	}
+	&__sub-title{
+		color: var(--nxt-txt-additional-color);
+        font-weight: 700;
+	}
+	&__content{
+		
+	}
+}

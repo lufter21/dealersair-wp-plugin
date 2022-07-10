@@ -18,7 +18,9 @@
 		"start:slider": "wp-scripts start slider/src/index.js --output-path=slider/build/",
 		"build:slider": "wp-scripts build slider/src/index.js --output-path=slider/build/",
 		"start:slider-item": "wp-scripts start slider-item/src/index.js --output-path=slider-item/build/",
-		"build:slider-item": "wp-scripts build slider-item/src/index.js --output-path=slider-item/build/"
+		"build:slider-item": "wp-scripts build slider-item/src/index.js --output-path=slider-item/build/",
+		"start:text-block": "wp-scripts start text-block/src/index.js --output-path=text-block/build/",
+		"build:text-block": "wp-scripts build text-block/src/index.js --output-path=text-block/build/"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^21.0.2"

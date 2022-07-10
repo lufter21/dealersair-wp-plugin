@@ -83,7 +83,7 @@ function nxt_toolkit_scripts() {
 
 	wp_add_inline_script(
 		'nxt-toolkit-script', 
-		'var sJS = { assetsDirPath: "'. NXT_PLUGIN_URL .'", deferScriptsStartLoading: function () {}, deferScriptsBefore: [], deferScriptsAfter: [] };',
+		'var nxtTkJS = { assetsDirPath: "'. NXT_PLUGIN_URL .'", deferScriptsStartLoading: function () {}, deferScriptsBefore: [], deferScriptsAfter: [] };',
 		'before'
 	);
 }
