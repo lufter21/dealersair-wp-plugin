@@ -11,7 +11,12 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	InnerBlocks,
+	useInnerBlocksProps,
+} from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,8 +35,12 @@ import css from './editor.module.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
+	const blockProps = useBlockProps({
+		// className: classes,
+	});
+
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		allowedBlocks: ['dealersair-blocks/slider-item'],
+		allowedBlocks: ['core/paragraph'],
 		renderAppender: InnerBlocks.ButtonBlockAppender,
 	});
 
@@ -44,25 +53,23 @@ export default function Edit({ attributes, setAttributes }) {
 	}
 
 	return (
-		<>
-			<div {...useBlockProps()}>
-				<label>Title</label>
-				<RichText
-					tagName="div"
-					value={attributes.title}
-					className={css.inputTitle}
-					onChange={onChangeTitle}
-				/>
+		<div {...useBlockProps()}>
+			<label>Title</label>
+			<RichText
+				tagName="div"
+				value={attributes.title}
+				className={css.inputTitle}
+				onChange={onChangeTitle}
+			/>
 
-				<label>Sub Title</label>
-				<RichText
-					tagName="div"
-					value={attributes.subTitle}
-					className={css.inputTitle}
-					onChange={onChangeSubTitle}
-				/>
-			</div>
-			<div {...innerBlocksProps}></div>
-		</>
+			<label>Sub Title</label>
+			<RichText
+				tagName="div"
+				value={attributes.subTitle}
+				className={css.inputTitle}
+				onChange={onChangeSubTitle}
+			/>
+			<div {...innerBlocksProps} />
+		</div>
 	);
 }

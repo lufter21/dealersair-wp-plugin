@@ -20,9 +20,6 @@
         },
         "subTitle": {
             "type": "string"
-        },
-        "content": {
-            "type": "string"
         }
     }
 }

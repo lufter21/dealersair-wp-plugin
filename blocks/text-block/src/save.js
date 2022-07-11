@@ -11,7 +11,11 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	useInnerBlocksProps
+} from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -23,6 +27,8 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
+	const innerBlocksProps = useInnerBlocksProps.save();
+
 	return (
 		<div className="nxt-text-block nxt-wrap">
 			<RichText.Content
@@ -32,12 +38,10 @@ export default function save({ attributes }) {
 			/>
 
 			<div className="nxt-text-block__content nxt-lg-row">
-				<div className="nxt-text-block__sub-title nxt-lg-col-3">
+				<div className="nxt-text-block__sub-title nxt-lg-col-4">
 					{attributes.subTitle}
 				</div>
-				<div className="nxt-text-block__items nxt-lg-col-9">
-					
-				</div>
+				<div {...innerBlocksProps} className="nxt-text-block__items nxt-lg-col-8" />
 			</div>
 		</div>
 	);

@@ -9,7 +9,8 @@
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
 
     &_nw {
         flex-wrap: nowrap;

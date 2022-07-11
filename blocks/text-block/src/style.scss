@@ -5,22 +5,63 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@import '../../../src/sass/variables';
 @import '../../../src/sass/functions';
+@import '../../../src/sass/extends';
+@import '../../../src/sass/mixins';
 
 .nxt-text-block {
+	font-size: rem(16);
 	font-family: var(--nxt-txt-font-family);
-    color: var(--nxt-txt-color);
-	&__title{
-		font-size: rem(36);
-        font-weight: 700;
-        line-height: calc(43/36);
-        font-family: var(--nxt-title-font-family);
+	color: var(--nxt-txt-color);
+	line-height: 1;
+
+	&__title {
+		font-size: em(36);
+		line-height: 1.35;
+		font-weight: 700;
+		line-height: calc(43/36);
+		font-family: var(--nxt-title-font-family);
 	}
-	&__sub-title{
+
+	&__sub-title {
+		line-height: 1.35;
 		color: var(--nxt-txt-additional-color);
-        font-weight: 700;
+		font-weight: 700;
 	}
-	&__content{
-		
+
+	&__content {
+		margin-top: em(10);
+	}
+
+	&__items {
+		margin-top: em(20);
+
+		p {
+			margin-top: em(20);
+			line-height: 1.5;
+			@include fch(t);
+		}
+
+		a{
+            @extend %link;
+            font-size: em(14);
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--nxt-txt-additional-color);
+            border-bottom: 1px solid var(--nxt-txt-additional-color);
+        }
+	}
+
+	@media(min-width: rem($vlg)) {
+		font-size: rem(18);
+
+		&__content {
+			margin-top: em(75, 18);
+		}
+
+		&__items {
+			margin-top: 0;
+		}
 	}
 }

@@ -862,7 +862,8 @@ body {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
     /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;
@@ -1090,7 +1091,8 @@ body {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
     /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;
@@ -1318,7 +1320,8 @@ body {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
     /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;
@@ -1546,7 +1549,8 @@ body {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
     /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;
@@ -1774,7 +1778,8 @@ body {
     display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
-    margin: 0 var(--nxt-row-margin-out);
+    margin-left: var(--nxt-row-margin-out);
+    margin-right: var(--nxt-row-margin-out);
     /* @media(max-width: 1200px) {
         margin-left: -15px;
         margin-right: -15px;

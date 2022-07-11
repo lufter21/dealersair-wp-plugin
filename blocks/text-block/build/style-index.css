@@ -7,19 +7,80 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+:root {
+  --nxt-content-width: 78.75rem;
+  --nxt-row-margin-out: -0.9375rem;
+  --nxt-column-padding: 0.9375rem;
+  --nxt-columns-between-spacing: 1.875rem;
+  --nxt-columns-between-spacing-60: 3.75rem;
+  --nxt-txt-color: #393939;
+  --nxt-txt-additional-color: #CDA177;
+  --nxt-txt-font-family: "Courier New", sans-serif;
+  --nxt-menu-hover: #CDA177;
+  --nxt-menu-current: #CDA177;
+  --nxt-menu-icon-color: #CDA177;
+  --nxt-border-color: #E5E5E5;
+  --nxt-mob-menu-color: rgba(10, 9, 13, 0.5);
+  --nxt-nav-font-family: "Montserrat", sans-serif;
+  --nxt-title-font-family: "Montserrat", sans-serif;
+}
+
+.nxt-text-block__items a {
+  display: inline-block;
+  line-height: normal;
+  text-decoration: none;
+  transition: 0.21s;
+}
+
 .nxt-text-block {
+  font-size: 1rem;
   font-family: var(--nxt-txt-font-family);
   color: var(--nxt-txt-color);
+  line-height: 1;
 }
 .nxt-text-block__title {
-  font-size: 2.25rem;
+  font-size: 2.25em;
+  line-height: 1.35;
   font-weight: 700;
   line-height: 1.1944444444;
   font-family: var(--nxt-title-font-family);
 }
 .nxt-text-block__sub-title {
+  line-height: 1.35;
   color: var(--nxt-txt-additional-color);
   font-weight: 700;
+}
+.nxt-text-block__content {
+  margin-top: 0.625em;
+}
+.nxt-text-block__items {
+  margin-top: 1.25em;
+}
+.nxt-text-block__items p {
+  margin-top: 1.25em;
+  line-height: 1.5;
+}
+.nxt-text-block__items p:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+.nxt-text-block__items a {
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--nxt-txt-additional-color);
+  border-bottom: 1px solid var(--nxt-txt-additional-color);
+}
+@media (min-width: 64rem) {
+  .nxt-text-block {
+    font-size: 1.125rem;
+  }
+  .nxt-text-block__content {
+    margin-top: 4.1666666667em;
+  }
+  .nxt-text-block__items {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/
